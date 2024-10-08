@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Topic 3 - Access Modifiers and Encapsulations</h1>
+    <h1 id = "personOne"></h1>
+    <script>
+        class Person{
+    #name;
+    #age;
+    #occupation;
+
+    constructor(name, age, occupation){
+        this.#name = name;
+        this.#age = age;
+        this.#occupation = occupation;
+
+    }
+    get name(){
+        return this.#name;
+    }
+    get age(){
+        return this.#age;
+    }
+    get occupation(){
+        return this.#occupation;
+    }
+    displayInfo(){
+        console.log("Name: " + this.name);
+        console.log("Age: " + this.age);
+        console.log("Occupation: " + this.occupation);
+    }
+    displayInfoHTML(){
+        const personElement = document.getElementById('personOne');
+        personElement.innerHTML =`
+        <strong>Name:</strong>${this.name}<br>
+        <strong>Age:</strong>${this.age}<br>
+        <strong>Occupation:</strong>${this.occupation}
+        `;
+
+
+    }
+}
+const personOne = new Person ('Velt Jade Sabal', 21, 'Model');
+personOne.displayInfo();
+personOne.displayInfoHTML();
+
+    </script>
+</body>
+</html>
